@@ -14,11 +14,12 @@ interface Expense {
 
 interface ExpenseListProps {
     expenses: Expense[];
+    currency?: string;
     onEdit: (expense: Expense) => void;
     onDelete: (id: string) => void;
 }
 
-export default function ExpenseList({ expenses, onEdit, onDelete }: ExpenseListProps) {
+export default function ExpenseList({ expenses, currency, onEdit, onDelete }: ExpenseListProps) {
     if (expenses.length === 0) {
         return (
             <div className="rounded-2xl border border-dashed border-border p-12 text-center">
@@ -59,7 +60,7 @@ export default function ExpenseList({ expenses, onEdit, onDelete }: ExpenseListP
                                     </span>
                                 </td>
                                 <td className="px-6 py-4 text-right font-bold text-base">
-                                    {formatCurrency(expense.amount)}
+                                    {formatCurrency(expense.amount, currency)}
                                 </td>
                                 <td className="px-6 py-4 text-right">
                                     <div className="flex items-center justify-end gap-2 opacity-0 transition-opacity group-hover:opacity-100">

@@ -158,6 +158,7 @@ function ExpensesContent() {
 
             <ExpenseList
                 expenses={expenses}
+                currency={session?.user?.currency}
                 onEdit={(exp) => {
                     setEditingExpense(exp);
                     setShowForm(true);

@@ -68,18 +68,18 @@ export default function DashboardPage() {
       <div className="grid gap-6 md:grid-cols-3 mb-8">
         <StatCard
           label="Total Balance"
-          value={formatCurrency(12450.00)}
+          value={formatCurrency(12450.00, session?.user?.currency)}
           icon={Wallet}
         />
         <StatCard
           label="Total Spent"
-          value={formatCurrency(stats?.totalSpent || 0)}
+          value={formatCurrency(stats?.totalSpent || 0, session?.user?.currency)}
           icon={CreditCard}
           trend={{ value: 12, isUp: true }}
         />
         <StatCard
           label="Savings"
-          value={formatCurrency(8450.00)}
+          value={formatCurrency(8450.00, session?.user?.currency)}
           icon={TrendingUp}
         />
       </div>

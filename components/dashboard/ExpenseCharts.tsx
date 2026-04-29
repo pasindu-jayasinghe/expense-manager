@@ -13,7 +13,7 @@ import {
     Cell
 } from "recharts";
 
-const COLORS = ["#f8fafc", "#e2e8f0", "#94a3b8", "#64748b", "#475569"];
+const COLORS = ["#3b82f6", "#10b981", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899"];
 
 interface ChartsProps {
     monthlyData: { name: string; total: number }[];
@@ -51,7 +51,7 @@ export default function ExpenseCharts({ monthlyData, categoryData }: ChartsProps
                                     color: "#fff"
                                 }}
                             />
-                            <Bar dataKey="total" fill="#f8fafc" radius={[4, 4, 0, 0]} />
+                            <Bar dataKey="total" fill="#3b82f6" radius={[4, 4, 0, 0]} />
                         </BarChart>
                     </ResponsiveContainer>
                 </div>

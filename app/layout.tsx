@@ -7,7 +7,7 @@ import Sidebar from "@/components/layout/Sidebar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Expensely | Smart Expense Manager",
+  title: "Expensely | Smart Expense ManagerXX",
   description: "Manage your expenses with style and precision",
 };
 

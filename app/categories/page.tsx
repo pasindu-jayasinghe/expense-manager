@@ -114,20 +114,28 @@ export default function CategoriesPage() {
                 <div className="rounded-2xl border border-border bg-card p-6 shadow-sm">
                     <h2 className="mb-4 text-lg font-semibold">Your Categories</h2>
                     <div className="grid gap-3">
-                        {categories.map((cat: any) => (
-                            <div key={cat.id} className="flex items-center justify-between rounded-xl border border-border bg-accent/30 p-4 transition-colors hover:bg-accent/50">
-                                <div className="flex items-center gap-3">
-                                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary uppercase text-xs font-bold">
-                                        {cat.name.substring(0, 2)}
-                                    </div>
-                                    <div>
-                                        <p className="font-medium">{cat.name}</p>
-                                        <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{cat.type}</p>
-                                    </div>
-                                </div>
-                                <Tag className="h-4 w-4 text-muted-foreground" />
+                        {categories.length === 0 ? (
+                            <div className="flex flex-col items-center justify-center rounded-xl border border-dashed border-border py-8 text-center bg-accent/10">
+                                <Tags className="mb-2 h-8 w-8 text-muted-foreground/50" />
+                                <p className="text-sm font-medium text-muted-foreground">No categories yet</p>
+                                <p className="text-xs text-muted-foreground/70 mt-1">Create one to get started</p>
                             </div>
-                        ))}
+                        ) : (
+                            categories.map((cat: any) => (
+                                <div key={cat.id} className="flex items-center justify-between rounded-xl border border-border bg-accent/30 p-4 transition-colors hover:bg-accent/50">
+                                    <div className="flex items-center gap-3">
+                                        <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-primary/10 text-primary uppercase text-xs font-bold">
+                                            {cat.name.substring(0, 2)}
+                                        </div>
+                                        <div>
+                                            <p className="font-medium">{cat.name}</p>
+                                            <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{cat.type}</p>
+                                        </div>
+                                    </div>
+                                    <Tag className="h-4 w-4 text-muted-foreground" />
+                                </div>
+                            ))
+                        )}
                     </div>
                 </div>
             </div>
